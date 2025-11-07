@@ -1,85 +1,249 @@
 {
   "users": [
     {
-      "id": "1",
-      "email": "test@example.com",
+      "id": 1,
+      "email": "testuser@example.com",
       "password": "password123",
-      "token": "fake-jwt-for-test-user"
+      "token": "fake-jwt-token"
     },
     {
-      "id": "7044",
+      "id": "eb1d",
       "email": "hmujaeho@gmail.com",
-      "password": "qwer1234",
-      "token": "fake-jwt-for-hmujaeho-user"
-    },
-    {
-      "id": "e147",
-      "email": "",
-      "password": ""
-    },
-    {
-      "id": "42a2",
-      "email": "",
-      "password": ""
-    }
-  ],
-  "sounds": [
-    {
-      "id": "1",
-      "time": "10:30 AM",
-      "event": "식사 소리 감지됨"
-    },
-    {
-      "id": "2",
-      "time": "11:00 AM",
-      "event": "대화 소리 감지됨"
-    },
-    {
-      "id": "3",
-      "time": "12:15 PM",
-      "event": "문 소리 감지됨"
-    },
-    {
-      "id": "4",
-      "time": "12:30 PM",
-      "event": "식사 소리 감지됨"
+      "password": "qwer1234"
     }
   ],
   "vitascores": [
     {
-      "id": "1",
-      "name": "월",
-      "vitaScore": 80
+      "id": 1,
+      "date": "2025-10-01",
+      "vitaScore": 85,
+      "shortTermAverage": 86,
+      "longTermAverage": 88
     },
     {
-      "id": "2",
-      "name": "화",
-      "vitaScore": 85
+      "id": 2,
+      "date": "2025-10-02",
+      "vitaScore": 86,
+      "shortTermAverage": 86,
+      "longTermAverage": 88
     },
     {
-      "id": "3",
-      "name": "수",
-      "vitaScore": 78
+      "id": 3,
+      "date": "2025-10-03",
+      "vitaScore": 88,
+      "shortTermAverage": 87,
+      "longTermAverage": 88
     },
     {
-      "id": "4",
-      "name": "목",
-      "vitaScore": 90
+      "id": 4,
+      "date": "2025-10-04",
+      "vitaScore": 87,
+      "shortTermAverage": 87,
+      "longTermAverage": 88
     },
     {
-      "id": "5",
-      "name": "금",
-      "vitaScore": 88
+      "id": 5,
+      "date": "2025-10-05",
+      "vitaScore": 85,
+      "shortTermAverage": 86,
+      "longTermAverage": 88
     },
     {
-      "id": "6",
-      "name": "토",
-      "vitaScore": 92
+      "id": 6,
+      "date": "2025-10-06",
+      "vitaScore": 84,
+      "shortTermAverage": 86,
+      "longTermAverage": 87
     },
     {
-      "id": "7",
-      "name": "일",
-      "vitaScore": 95
+      "id": 7,
+      "date": "2025-10-07",
+      "vitaScore": 82,
+      "shortTermAverage": 85,
+      "longTermAverage": 87
+    },
+    {
+      "id": 8,
+      "date": "2025-10-08",
+      "vitaScore": 80,
+      "shortTermAverage": 84,
+      "longTermAverage": 87
+    },
+    {
+      "id": 9,
+      "date": "2025-10-09",
+      "vitaScore": 78,
+      "shortTermAverage": 83,
+      "longTermAverage": 86
+    },
+    {
+      "id": 10,
+      "date": "2025-10-10",
+      "vitaScore": 75,
+      "shortTermAverage": 81,
+      "longTermAverage": 86
+    },
+    {
+      "id": 11,
+      "date": "2025-10-11",
+      "vitaScore": 76,
+      "shortTermAverage": 80,
+      "longTermAverage": 85
+    },
+    {
+      "id": 12,
+      "date": "2025-10-12",
+      "vitaScore": 74,
+      "shortTermAverage": 78,
+      "longTermAverage": 85
+    },
+    {
+      "id": 13,
+      "date": "2025-10-13",
+      "vitaScore": 72,
+      "shortTermAverage": 77,
+      "longTermAverage": 84
+    },
+    {
+      "id": 14,
+      "date": "2025-10-14",
+      "vitaScore": 70,
+      "shortTermAverage": 75,
+      "longTermAverage": 83
+    },
+    {
+      "id": 15,
+      "date": "2025-10-15",
+      "vitaScore": 68,
+      "shortTermAverage": 73,
+      "longTermAverage": 82
+    },
+    {
+      "id": 16,
+      "date": "2025-10-16",
+      "vitaScore": 65,
+      "shortTermAverage": 71,
+      "longTermAverage": 81
+    },
+    {
+      "id": 17,
+      "date": "2025-10-17",
+      "vitaScore": 66,
+      "shortTermAverage": 70,
+      "longTermAverage": 80
+    },
+    {
+      "id": 18,
+      "date": "2025-10-18",
+      "vitaScore": 64,
+      "shortTermAverage": 68,
+      "longTermAverage": 79
+    },
+    {
+      "id": 19,
+      "date": "2025-10-19",
+      "vitaScore": 62,
+      "shortTermAverage": 67,
+      "longTermAverage": 78
+    },
+    {
+      "id": 20,
+      "date": "2025-10-20",
+      "vitaScore": 60,
+      "shortTermAverage": 65,
+      "longTermAverage": 77
+    },
+    {
+      "id": 21,
+      "date": "2025-10-21",
+      "vitaScore": 58,
+      "shortTermAverage": 63,
+      "longTermAverage": 76
+    },
+    {
+      "id": 22,
+      "date": "2025-10-22",
+      "vitaScore": 59,
+      "shortTermAverage": 62,
+      "longTermAverage": 75
+    },
+    {
+      "id": 23,
+      "date": "2025-10-23",
+      "vitaScore": 57,
+      "shortTermAverage": 61,
+      "longTermAverage": 74
+    },
+    {
+      "id": 24,
+      "date": "2025-10-24",
+      "vitaScore": 55,
+      "shortTermAverage": 59,
+      "longTermAverage": 73
+    },
+    {
+      "id": 25,
+      "date": "2025-10-25",
+      "vitaScore": 56,
+      "shortTermAverage": 58,
+      "longTermAverage": 72
+    },
+    {
+      "id": 26,
+      "date": "2025-10-26",
+      "vitaScore": 54,
+      "shortTermAverage": 57,
+      "longTermAverage": 71
+    },
+    {
+      "id": 27,
+      "date": "2025-10-27",
+      "vitaScore": 52,
+      "shortTermAverage": 56,
+      "longTermAverage": 70
+    },
+    {
+      "id": 28,
+      "date": "2025-10-28",
+      "vitaScore": 50,
+      "shortTermAverage": 55,
+      "longTermAverage": 69
+    },
+    {
+      "id": 29,
+      "date": "2025-10-29",
+      "vitaScore": 51,
+      "shortTermAverage": 54,
+      "longTermAverage": 68
+    },
+    {
+      "id": 30,
+      "date": "2025-10-30",
+      "vitaScore": 49,
+      "shortTermAverage": 52,
+      "longTermAverage": 67
+    }
+  ],
+  "subscores": {
+    "outing": 75,
+    "sleep": 80,
+    "meal": 85
+  },
+  "alerts": [
+    {
+      "id": 1,
+      "timestamp": "2025-10-28 09:00:00",
+      "message": "단기 활력 점수가 장기 기준선보다 5점 이상 낮아졌습니다."
+    },
+    {
+      "id": 2,
+      "timestamp": "2025-10-29 09:00:00",
+      "message": "단기 활력 점수가 장기 기준선보다 5점 이상 낮아졌습니다."
+    },
+    {
+      "id": 3,
+      "timestamp": "2025-10-30 09:00:00",
+      "message": "단기 활력 점수가 장기 기준선보다 5점 이상 낮아졌습니다. 3일 연속 심각한 위험 상태입니다."
     }
   ]
 }

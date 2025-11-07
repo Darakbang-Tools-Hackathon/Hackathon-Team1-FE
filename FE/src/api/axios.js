@@ -27,4 +27,50 @@ export const getSensorLocations = async () => {
   }
 };
 
+export const getVitaScores = async () => {
+  try {
+    const response = await axiosInstance.get('/vitascores');
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching vita scores:", error);
+    throw error;
+  }
+};
+
+export const getSubScores = async () => {
+  try {
+    const response = await axiosInstance.get('/subscores');
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching sub-scores:", error);
+    throw error;
+  }
+};
+
+export const getAlerts = async () => {
+  try {
+    const response = await axiosInstance.get('/alerts');
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching alerts:", error);
+    throw error;
+  }
+};
+
+export const uploadFloorPlan = async (file) => {
+  try {
+    const formData = new FormData();
+    formData.append('floorPlan', file);
+    const response = await axiosInstance.post('/upload-floorplan', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error uploading floor plan:", error);
+    throw error;
+  }
+};
+
 export default axiosInstance;

@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/common/Layout';
-import AlertHistory from '../components/dashboard/AlertHistroy';
+import AlertHistory from '../components/dashboard/AlertHistory';
 import SubScoreCards from '../components/dashboard/SubScoreCards';
 import VitaScoreChart from '../components/dashboard/VitaScoreChart';
 
