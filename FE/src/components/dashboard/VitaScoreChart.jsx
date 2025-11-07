@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import Card from '../common/Card';
 
 const VitaScoreChart = () => {
-  const data = [
-    { name: '월', vitaScore: 80 },
-    { name: '화', vitaScore: 85 },
-    { name: '수', vitaScore: 78 },
-    { name: '목', vitaScore: 90 },
-    { name: '금', vitaScore: 88 },
-    { name: '토', vitaScore: 92 },
-    { name: '일', vitaScore: 95 },
-  ];
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:3002/vitascores')
+      .then(response => {
+        setData(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching vita scores:', error);
+      });
+  }, []);
 
   return (
     <Card title="Vita-Score 추이">

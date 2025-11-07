@@ -1,0 +1,73 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "test@example.com",
+      "password": "password123"
+    },
+    {
+      "id": "7044",
+      "email": "hmujaeho@gmail.com",
+      "password": "qwer1234"
+    }
+  ],
+  "sounds": [
+    {
+      "id": "1",
+      "time": "10:30 AM",
+      "event": "식사 소리 감지됨"
+    },
+    {
+      "id": "2",
+      "time": "11:00 AM",
+      "event": "대화 소리 감지됨"
+    },
+    {
+      "id": "3",
+      "time": "12:15 PM",
+      "event": "문 소리 감지됨"
+    },
+    {
+      "id": "4",
+      "time": "12:30 PM",
+      "event": "식사 소리 감지됨"
+    }
+  ],
+  "vitascores": [
+    {
+      "id": "1",
+      "name": "월",
+      "vitaScore": 80
+    },
+    {
+      "id": "2",
+      "name": "화",
+      "vitaScore": 85
+    },
+    {
+      "id": "3",
+      "name": "수",
+      "vitaScore": 78
+    },
+    {
+      "id": "4",
+      "name": "목",
+      "vitaScore": 90
+    },
+    {
+      "id": "5",
+      "name": "금",
+      "vitaScore": 88
+    },
+    {
+      "id": "6",
+      "name": "토",
+      "vitaScore": 92
+    },
+    {
+      "id": "7",
+      "name": "일",
+      "vitaScore": 95
+    }
+  ]
+}

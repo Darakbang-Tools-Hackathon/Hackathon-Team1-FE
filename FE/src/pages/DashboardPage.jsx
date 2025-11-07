@@ -1,11 +1,23 @@
 import React from 'react';
 import Layout from '../components/common/Layout';
+import AlertHistory from '../components/dashboard/AlertHistroy';
+import SubScoreCards from '../components/dashboard/SubScoreCards';
+import VitaScoreChart from '../components/dashboard/VitaScoreChart';
 
 const DashboardPage = () => {
   return (
     <Layout>
-      <h1 className="text-2xl font-bold">Dashboard Page</h1>
-      <p>This is a placeholder for the dashboard page.</p>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="md:col-span-2">
+          <VitaScoreChart />
+        </div>
+        <div className="md:col-span-1">
+          <SubScoreCards />
+        </div>
+        <div className="md:col-span-3">
+          <AlertHistory />
+        </div>
+      </div>
     </Layout>
   );
 };
