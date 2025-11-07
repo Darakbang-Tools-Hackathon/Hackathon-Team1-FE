@@ -12,11 +12,21 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
     try {
-      const response = await api.get(`/users?email=${email}&password=${password}`);
-      if (response.data.length > 0) {
-        const userData = response.data[0];
-        login(userData);
+      // Using POST for login is more secure.
+      // json-server doesn't have a built-in /login endpoint,
+      // so we'll fetch all users and find the match.
+      // In a real backend, you'd post to /login.
+      const response = await api.get('/users');
+      const user = response.data.find(
+        (u) => u.email === email && u.password === password
+      );
+
+      if (user) {
+        // In a real app, the server would return a token upon successful login.
+        // Here, we're using the token already in db.json.
+        login(user);
         navigate('/dashboard');
       } else {
         setError('이메일 또는 비밀번호가 잘못되었습니다.');
@@ -43,6 +53,7 @@ const Login = () => {
             placeholder="이메일을 입력하세요"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
         </div>
         <div className="mb-6">
@@ -56,6 +67,7 @@ const Login = () => {
             placeholder="비밀번호를 입력하세요"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
         </div>
         <div className="flex items-center justify-between">

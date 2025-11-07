@@ -1,8 +1,8 @@
 import React from 'react';
 import Layout from '../components/common/Layout';
 import AlertHistory from '../components/dashboard/AlertHistory';
-import SubScoreCards from '../components/dashboard/SubScoreCards';
 import VitaScoreChart from '../components/dashboard/VitaScoreChart';
+import VitaScoreComposition from '../components/dashboard/VitaScoreComposition';
 
 const DashboardPage = () => {
   return (
@@ -12,7 +12,7 @@ const DashboardPage = () => {
           <VitaScoreChart />
         </div>
         <div className="md:col-span-1">
-          <SubScoreCards />
+          <VitaScoreComposition />
         </div>
         <div className="md:col-span-3">
           <AlertHistory />

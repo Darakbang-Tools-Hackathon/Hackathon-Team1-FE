@@ -1,20 +1,37 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api/axios'; // Use the configured axios instance
 
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      // In a real app, you'd verify the token with the backend
-      // For now, we'll just decode it (assuming it's not encrypted)
-      // and get the user info.
-      // Here, we'll just set a dummy user if a token exists.
-      setUser({ token });
-    }
+    const verifyUser = async () => {
+      const token = localStorage.getItem('token');
+      if (token) {
+        try {
+          // The token itself is the user's identifier in this mock setup.
+          // In a real JWT setup, you'd send the token in the header
+          // and the backend would return the user.
+          // Here, we find the user whose token matches.
+          const response = await api.get(`/users?token=${token}`);
+          if (response.data.length > 0) {
+            setUser(response.data[0]);
+          } else {
+            // Token is invalid or user deleted
+            localStorage.removeItem('token');
+          }
+        } catch (error) {
+          console.error("Failed to verify user token:", error);
+          localStorage.removeItem('token');
+        }
+      }
+      setLoading(false);
+    };
+
+    verifyUser();
   }, []);
 
   const login = (userData) => {
@@ -28,8 +45,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
-      {children}
+    <AuthContext.Provider value={{ user, login, logout, loading }}>
+      {!loading && children}
     </AuthContext.Provider>
   );
 };
