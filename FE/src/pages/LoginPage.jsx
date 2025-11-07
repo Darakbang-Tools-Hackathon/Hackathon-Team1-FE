@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../api/axios';
 import { useAuth } from '../context/AuthContext';
 import Layout from '../components/common/Layout';
 
@@ -14,7 +14,7 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get(`http://localhost:3002/users?email=${email}&password=${password}`);
+      const response = await api.get(`/users?email=${email}&password=${password}`);
       if (response.data.length > 0) {
         const userData = response.data[0];
         login(userData);

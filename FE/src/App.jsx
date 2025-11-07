@@ -1,8 +1,9 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
+import PrivateRoute from './components/router/PrivateRoute';
 import LandingPage from './pages/LandingPage';
-import Dashboard from './pages/DashboardPage';
+import DashboardPage from './pages/DashboardPage';
 import PlacementPage from './pages/PlacementPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
@@ -15,11 +16,19 @@ const router = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element: <Dashboard />,
+    element: (
+      <PrivateRoute>
+        <DashboardPage />
+      </PrivateRoute>
+    ),
   },
   {
     path: '/placement',
-    element: <PlacementPage />,
+    element: (
+      <PrivateRoute>
+        <PlacementPage />
+      </PrivateRoute>
+    ),
   },
   {
     path: '/login',

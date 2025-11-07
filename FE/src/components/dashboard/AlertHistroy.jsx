@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../api/axios';
 import Card from '../common/Card';
 
 const AlertHistory = () => {
   const [alerts, setAlerts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3002/sounds')
+    api.get('/sounds')
       .then(response => {
         setAlerts(response.data);
       })

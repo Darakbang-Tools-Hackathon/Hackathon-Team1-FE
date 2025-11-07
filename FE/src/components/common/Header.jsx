@@ -22,10 +22,7 @@ const Header = () => {
               </button>
             </>
           ) : (
-            <>
-              <Link to="/login" className="mr-4">로그인</Link>
-              <Link to="/signup">회원가입</Link>
-            </>
+            <Link to="/login">로그인</Link>
           )}
         </div>
       </div>

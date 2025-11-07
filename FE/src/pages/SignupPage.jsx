@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../api/axios';
 import Layout from '../components/common/Layout';
 
 const SignupPage = () => {
@@ -17,7 +17,7 @@ const SignupPage = () => {
       return;
     }
     try {
-      await axios.post('http://localhost:3002/users', { email, password });
+      await api.post('/users', { email, password });
       navigate('/login');
     } catch (err) {
       setError('회원가입 중 오류가 발생했습니다.');
