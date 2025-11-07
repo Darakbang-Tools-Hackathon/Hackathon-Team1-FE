@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import api from '../../api/axios';
 
-const Signup = ({ onSwitchToLogin, onSignupSuccess }) => {
+const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,7 +17,7 @@ const Signup = ({ onSwitchToLogin, onSignupSuccess }) => {
     }
     try {
       await api.post('/users', { email, password });
-      onSignupSuccess();
+      navigate('/login');
     } catch (err) {
       setError('회원가입 중 오류가 발생했습니다.');
       console.error(err);
@@ -70,13 +72,9 @@ const Signup = ({ onSwitchToLogin, onSignupSuccess }) => {
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
             회원가입
           </button>
-          <button
-            type="button"
-            onClick={onSwitchToLogin}
-            className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
-          >
+          <Link to="/login" className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
             로그인
-          </button>
+          </Link>
         </div>
       </form>
     </div>

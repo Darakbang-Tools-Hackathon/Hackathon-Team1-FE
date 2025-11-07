@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import api from '../../api/axios';
 import { useAuth } from '../../context/AuthContext';
 
-const Login = ({ onSwitchToSignup }) => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -62,13 +62,9 @@ const Login = ({ onSwitchToSignup }) => {
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
             로그인
           </button>
-          <button
-            type="button"
-            onClick={onSwitchToSignup}
-            className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
-          >
+          <Link to="/signup" className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
             회원가입
-          </button>
+          </Link>
         </div>
       </form>
     </div>

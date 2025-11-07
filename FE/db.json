@@ -11,6 +11,16 @@
       "email": "hmujaeho@gmail.com",
       "password": "qwer1234",
       "token": "fake-jwt-for-hmujaeho-user"
+    },
+    {
+      "id": "e147",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "42a2",
+      "email": "",
+      "password": ""
     }
   ],
   "sounds": [
