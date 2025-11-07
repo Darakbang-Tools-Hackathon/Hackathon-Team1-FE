@@ -1,16 +1,27 @@
-import { useState } from 'react'
+import React from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
+import Dashboard from './pages/Dashboard';
+import PlacementPage from './pages/PlacementPage';
+import './styles/index.css';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <LandingPage />,
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard />,
+  },
+  {
+    path: '/placement',
+    element: <PlacementPage />,
+  },
+]);
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <h1 className="text-3xl font-bold">Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount(count + 1)}>Count is {count}</button>
-      </div>
-    </>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
