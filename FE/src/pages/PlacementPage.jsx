@@ -8,7 +8,7 @@ const PlacementPage = () => {
 
   return (
     <Layout>
-      <h1 className="text-2xl font-bold mb-4">장비 설치 위치 추천</h1>
+      <h1 className="text-2xl font-bold mb-4">음향 센서 위치 추천</h1>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div className="md:col-span-1">
           <FloorPlanUploader setFloorPlan={setFloorPlan} />

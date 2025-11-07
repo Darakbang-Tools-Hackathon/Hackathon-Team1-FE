@@ -7,8 +7,6 @@ import DashboardPage from './pages/DashboardPage';
 import PlacementPage from './pages/PlacementPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
-import VitaPage from './pages/VitaPage';
-import VitaPage from './pages/VIitaPage';
 import './styles/index.css';
 
 const router = createBrowserRouter([

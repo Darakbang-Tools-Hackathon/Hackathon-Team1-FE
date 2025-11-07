@@ -34,7 +34,7 @@ const LandingPage = () => {
           <p className="text-lg md:text-2xl text-gray-600 max-w-3xl mx-auto">
             AI 음향 분석 기술을 통해 어르신의 건강을 미리 예측하고, 반응적 돌봄의 한계를 넘어 소중한 일상을 지킵니다.
           </p>
-          <Link to="/login">
+          <Link to="/dashboard">
             <button className="mt-8 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition-transform duration-300 transform hover:scale-105">
               대시보드 시작하기
             </button>

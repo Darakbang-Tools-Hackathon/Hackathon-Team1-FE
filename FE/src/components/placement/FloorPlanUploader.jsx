@@ -8,14 +8,12 @@ const FloorPlanUploader = ({ setFloorPlan }) => {
     const file = event.target.files[0];
     if (file) {
       try {
-        // Display a preview of the image immediately
         const reader = new FileReader();
         reader.onload = (e) => {
-          setFloorPlan(e.target.result); // Set local state for immediate preview
+          setFloorPlan(e.target.result); 
         };
         reader.readAsDataURL(file);
 
-        // Upload the file to the server
         const response = await uploadFloorPlan(file);
         console.log('Floor plan uploaded successfully:', response);
         // If the server returns the URL or ID of the uploaded image, you might want to update the state with that.
