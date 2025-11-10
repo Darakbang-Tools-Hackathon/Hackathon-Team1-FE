@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getVitaScores } from '../../api/axios';
+import { getVitaScores } from '../../api/mock';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import Card from '../common/Card';
 

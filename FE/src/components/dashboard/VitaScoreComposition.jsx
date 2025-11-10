@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getSubScores } from '../../api/axios';
+import { getSubScores } from '../../api/mock';
 import Card from '../common/Card';
 
 const VitaScoreComposition = () => {

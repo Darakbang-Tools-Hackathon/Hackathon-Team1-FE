@@ -1,0 +1,112 @@
+const db = {
+  "users": [
+    {
+      "id": "1",
+      "email": "test@gmail.com",
+      "password": "test1234",
+      "token": "fake-jwt-token"
+    },
+    
+  ],
+  "vitascores": [
+    { "id": "1", "date": "2025-10-01", "vitaScore": 88, "shortTermAverage": 88, "longTermAverage": 86 },
+    { "id": "2", "date": "2025-10-02", "vitaScore": 89, "shortTermAverage": 88, "longTermAverage": 86 },
+    { "id": "3", "date": "2025-10-03", "vitaScore": 87, "shortTermAverage": 88, "longTermAverage": 86 },
+    { "id": "4", "date": "2025-10-04", "vitaScore": 90, "shortTermAverage": 88, "longTermAverage": 86 },
+    { "id": "5", "date": "2025-10-05", "vitaScore": 88, "shortTermAverage": 88, "longTermAverage": 86 },
+    { "id": "6", "date": "2025-10-06", "vitaScore": 86, "shortTermAverage": 88, "longTermAverage": 86 },
+    { "id": "7", "date": "2025-10-07", "vitaScore": 88, "shortTermAverage": 88, "longTermAverage": 86 },
+    { "id": "8", "date": "2025-10-08", "vitaScore": 89, "shortTermAverage": 88, "longTermAverage": 86 },
+    { "id": "9", "date": "2025-10-09", "vitaScore": 87, "shortTermAverage": 88, "longTermAverage": 86 },
+    { "id": "10", "date": "2025-10-10", "vitaScore": 88, "shortTermAverage": 88, "longTermAverage": 86 },
+    { "id": "11", "date": "2025-10-11", "vitaScore": 86, "shortTermAverage": 88, "longTermAverage": 86 },
+    { "id": "12", "date": "2025-10-12", "vitaScore": 89, "shortTermAverage": 88, "longTermAverage": 86 },
+    { "id": "13", "date": "2025-10-13", "vitaScore": 88, "shortTermAverage": 88, "longTermAverage": 86 },
+    { "id": "14", "date": "2025-10-14", "vitaScore": 87, "shortTermAverage": 88, "longTermAverage": 86 },
+    { "id": "15", "date": "2025-10-15", "vitaScore": 88, "shortTermAverage": 88, "longTermAverage": 86 },
+    { "id": "16", "date": "2025-10-16", "vitaScore": 89, "shortTermAverage": 88, "longTermAverage": 86 },
+    { "id": "17", "date": "2025-10-17", "vitaScore": 87, "shortTermAverage": 88, "longTermAverage": 86 },
+    { "id": "18", "date": "2025-10-18", "vitaScore": 88, "shortTermAverage": 88, "longTermAverage": 86 },
+    { "id": "19", "date": "2025-10-19", "vitaScore": 75, "shortTermAverage": 85, "longTermAverage": 86 },
+    { "id": "20", "date": "2025-10-20", "vitaScore": 72, "shortTermAverage": 82, "longTermAverage": 85 },
+    { "id": "21", "date": "2025-10-21", "vitaScore": 68, "shortTermAverage": 79, "longTermAverage": 85 },
+    { "id": "22", "date": "2025-10-22", "vitaScore": 65, "shortTermAverage": 76, "longTermAverage": 84 },
+    { "id": "23", "date": "2025-10-23", "vitaScore": 60, "shortTermAverage": 72, "longTermAverage": 83 },
+    { "id": "24", "date": "2025-10-24", "vitaScore": 55, "shortTermAverage": 68, "longTermAverage": 82 },
+    { "id": "25", "date": "2025-10-25", "vitaScore": 58, "shortTermAverage": 65, "longTermAverage": 81 },
+    { "id": "26", "date": "2025-10-26", "vitaScore": 62, "shortTermAverage": 64, "longTermAverage": 80 },
+    { "id": "27", "date": "2025-10-27", "vitaScore": 65, "shortTermAverage": 63, "longTermAverage": 79 },
+    { "id": "28", "date": "2025-10-28", "vitaScore": 68, "shortTermAverage": 63, "longTermAverage": 78 },
+    { "id": "29", "date": "2025-10-29", "vitaScore": 70, "shortTermAverage": 63, "longTermAverage": 78 },
+    { "id": "30", "date": "2025-10-30", "vitaScore": 70, "shortTermAverage": 64, "longTermAverage": 78 }
+  ],
+  "subscores": {
+    "outing": 70,
+    "sleep": 68,
+    "meal": 71
+  },
+  "alerts": [
+    { "id": "1", "timestamp": "2025-10-22 09:00:00", "message": "활력 점수가 장기 평균보다 8점 하락했습니다.", "level": "주의" },
+    { "id": "2", "timestamp": "2025-10-23 09:00:00", "message": "활력 점수가 장기 평균보다 11점 하락했습니다.", "level": "위험" },
+    { "id": "3", "timestamp": "2025-10-24 09:00:00", "message": "활력 점수가 장기 평균보다 14점 하락했습니다. 3일 연속 하락세입니다.", "level": "심각" }
+  ],
+  "sensors": [
+      { "id": 1, "type": "motion", "x": 100, "y": 150 },
+      { "id": 2, "type": "door", "x": 250, "y": 50 }
+  ]
+};
+
+const api = {
+  get: (url) => {
+    if (url === '/users') {
+      return Promise.resolve({ data: db.users });
+    }
+    if (url === '/vitascores') {
+      return Promise.resolve({ data: db.vitascores });
+    }
+    if (url === '/subscores') {
+      return Promise.resolve({ data: db.subscores });
+    }
+    if (url === '/alerts') {
+      return Promise.resolve({ data: db.alerts });
+    }
+    if (url === '/sensors') {
+        return Promise.resolve({ data: db.sensors });
+    }
+    return Promise.reject(new Error(`GET request to ${url} not mocked`));
+  },
+  post: (url, data) => {
+    if (url === '/users') {
+      const newUser = { ...data, id: new Date().toISOString() };
+      db.users.push(newUser);
+      return Promise.resolve({ data: newUser });
+    }
+    if (url === '/upload-floorplan') {
+        return Promise.resolve({ data: { message: 'Floor plan uploaded successfully' } });
+    }
+    return Promise.reject(new Error(`POST request to ${url} not mocked`));
+  },
+};
+
+export const getSensorLocations = async () => {
+    return Promise.resolve(db.sensors);
+};
+
+export const getVitaScores = async () => {
+    return Promise.resolve(db.vitascores);
+};
+
+export const getSubScores = async () => {
+    return Promise.resolve(db.subscores);
+};
+
+export const getAlerts = async () => {
+    return Promise.resolve(db.alerts);
+};
+
+export const uploadFloorPlan = async (file) => {
+    return Promise.resolve({ message: 'Floor plan uploaded successfully' });
+};
+
+
+export default api;

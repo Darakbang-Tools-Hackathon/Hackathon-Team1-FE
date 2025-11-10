@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Card from '../common/Card';
 import Button from '../common/Button';
-import { getSensorLocations } from '../../api/axios';
+import { getSensorLocations } from '../../api/mock';
 
 const PlacementCanvas = ({ floorPlan }) => {
   const canvasRef = useRef(null);

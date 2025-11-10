@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getAlerts } from '../../api/axios';
+import { getAlerts } from '../../api/mock';
 import Card from '../common/Card';
 
 const AlertHistory = () => {

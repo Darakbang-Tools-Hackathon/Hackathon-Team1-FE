@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import api from '../../api/axios';
+import api from '../../api/mock';
 import { useAuth } from '../../context/AuthContext';
 
 const Login = () => {
@@ -79,6 +79,11 @@ const Login = () => {
           </Link>
         </div>
       </form>
+      <div className="mt-4 p-3 bg-blue-100 border border-blue-400 text-blue-700 rounded">
+        <p className="font-bold">데모 로그인 정보:</p>
+        <p>이메일: test@gmail.com</p>
+        <p>비밀번호: test1234</p>
+      </div>
     </div>
   );
 };

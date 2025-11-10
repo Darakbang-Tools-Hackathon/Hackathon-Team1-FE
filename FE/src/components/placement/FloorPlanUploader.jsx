@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { uploadFloorPlan } from '../../api/axios';
+import { uploadFloorPlan } from '../../api/mock';
 
 const FloorPlanUploader = ({ setFloorPlan }) => {
   const fileInputRef = useRef(null);
